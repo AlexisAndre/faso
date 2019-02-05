@@ -1,0 +1,27 @@
+import serial
+import requests
+import time
+import grovepi
+from grove_rgb_lcd import *
+import sys
+from threading import Thread
+
+
+class sendFrequence (Thread):
+	def __init__(self):
+		self.er = serial.Serial(port = '/dev/ttyACM0', baudrate = 9600)
+ser = serial.Serial(port = '/dev/ttyACM0', baudrate = 9600)
+def sendfreq():
+	while True:
+		line = self.ser.readline()
+		data = {"entry.1641621488":line}
+		requests.post("https://docs.google.com/forms/d/1gfiHars_1bIEvNVcMuJevnSkfyzPsWiM6mKFWnhEkEY/formResponse?", data =data)
+		time.sleep(5)
+
+def showfreq():
+	while True:
+		line=ser.readline()
+		setText("pulse: " + line)
+		if (grovepi.digitalRead(button3)):
+			break
+
